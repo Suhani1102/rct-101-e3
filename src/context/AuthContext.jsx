@@ -8,7 +8,7 @@ export const AuthProvider = ({ children }) => {
   const navigate = useNavigate();
 
   const login = (username, password) => {
-    if (username == "eve.holt@reqres.in" && password == "cityslicka") {
+    if (username === "eve.holt@reqres.in" && password === "cityslicka") {
       setIsAuthorised(true);
       navigate("/");
     }
