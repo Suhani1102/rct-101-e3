@@ -3,7 +3,7 @@ import { AuthContext } from "../context/AuthContext";
 
 const Login = () => {
   const [loginCred, setLoginCred] = useState({});
-  const { isAuthorised, login, logout } = useContext(AuthContext);
+  const { login } = useContext(AuthContext);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
