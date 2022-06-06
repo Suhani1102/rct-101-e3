@@ -2,6 +2,7 @@ import React from "react";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
+import styles from "./Navbar.module.css";
 
 // use react-router Link or NavLink
 // const Link = <a />;
@@ -18,7 +19,7 @@ const Navbar = () => {
     }
   };
   return (
-    <div data-cy="navbar">
+    <div data-cy="navbar" className={styles.navbar}>
       <Link to="/" data-cy="navbar-home-link">
         Logo
       </Link>

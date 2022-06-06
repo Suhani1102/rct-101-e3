@@ -1,8 +1,12 @@
 import React, { useState, useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
+import styles from "./Login.module.css";
 
 const Login = () => {
-  const [loginCred, setLoginCred] = useState({});
+  const [loginCred, setLoginCred] = useState({
+    email: "eve.holt@reqres.in",
+    password: "cityslicka",
+  });
   const { login } = useContext(AuthContext);
 
   const handleChange = (e) => {
@@ -15,15 +19,18 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    login();
+    login(loginCred.email, loginCred.password);
+    console.log(loginCred);
   };
 
   return (
-    <div>
+    <div className={styles.content}>
+      <p>Login</p>
       <input
         name="email"
         type="email"
         placeholder="Enter Email"
+        value={loginCred.email}
         onChange={handleChange}
         data-cy="login-email"
       />
@@ -31,6 +38,7 @@ const Login = () => {
         name="password"
         type="password"
         placeholder="Enter Password..."
+        value={loginCred.password}
         onChange={handleChange}
         data-cy="login-password"
       />

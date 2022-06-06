@@ -7,11 +7,11 @@ export const AuthProvider = ({ children }) => {
   const [isAuthorised, setIsAuthorised] = useState(false);
   const navigate = useNavigate();
 
-  const login = () => {
-    // if (username && password) {
-    setIsAuthorised(true);
-    navigate("/");
-    // }
+  const login = (username, password) => {
+    if (username == "eve.holt@reqres.in" && password == "cityslicka") {
+      setIsAuthorised(true);
+      navigate("/");
+    }
   };
 
   const logout = () => {
